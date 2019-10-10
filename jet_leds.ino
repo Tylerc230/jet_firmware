@@ -5,6 +5,7 @@ int switchState [switchCount];
 void setup() {
   Serial.begin(9600);
   initSwitches();
+  initLEDs();
 }
 
 void loop() {
