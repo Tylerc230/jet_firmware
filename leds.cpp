@@ -9,15 +9,13 @@
 
 #define MAX_LEDS 75
 struct LEDStrip {
-  uint8_t numLEDs;
+  const uint8_t pinNo;
+  const uint8_t numLEDs;
   CRGB leds[MAX_LEDS];
+  LEDStrip(uint8_t pinNo, uint8_t numLEDs) : pinNo(pinNo), numLEDs(numLEDs) { }
 };
 
-LEDStrip l_nose;
-LEDStrip r_nose;
-LEDStrip l_wing;
-LEDStrip r_wing;
-LEDStrip tail;
+LEDStrip tail = LEDStrip(TAIL_LED_PIN, 50);
 void initLEDs() {
     delay( 3000 ); // power-up safety delay
     FastLED.addLeds<LED_TYPE, TAIL_LED_PIN, COLOR_ORDER>(tail.leds, tail.numLEDs).setCorrection(TypicalLEDStrip);
