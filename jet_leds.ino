@@ -1,5 +1,6 @@
-#include <FastLED.h>
-#include "constants.h"
+#include <Arduino.h>
+#include "inputs.h"
+#include "leds.h"
 void setup() {
   Serial.begin(9600);
   initSwitches();

@@ -1,3 +1,4 @@
+#include <Arduino.h>
 #include "constants.h"
 #define COUNT(array) sizeof(array)/sizeof(array[0])
 
