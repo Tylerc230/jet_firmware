@@ -1,3 +1,9 @@
+#define BRIGHTNESS  64
+#define LED_TYPE    WS2811
+#define COLOR_ORDER GRB
+#define UPDATES_PER_SECOND 100
+
+#define MAX_LEDS 75
 #define L_NOSE_LED_PIN 2
 #define R_NOSE_LED_PIN 3
 #define L_WING_LED_PIN 4

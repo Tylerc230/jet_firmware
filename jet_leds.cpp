@@ -1,16 +1,13 @@
 #include <Arduino.h>
-#include "inputs.h"
-#include "leds.h"
+#include "program.h"
+Program program = Program();
 void setup() {
   Serial.begin(9600);
-  initSwitches();
-  initKnobs();
-  initLEDs();
+  delay( 3000 ); // power-up safety delay
+  program.init();
 }
 
 void loop() {
-  readSwitches();
-  readKnobs();
-  updateLEDs();
+  program.update();
 }
 

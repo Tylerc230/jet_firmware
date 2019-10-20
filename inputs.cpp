@@ -1,80 +1,44 @@
-#include <Arduino.h>
-#include "constants.h"
-#define COUNT(array) sizeof(array)/sizeof(array[0])
+#include "inputs.h"
+void Switch::init() {
+  pinMode(pin, INPUT_PULLUP);
+}
 
-struct Switch {
-  Switch(uint8_t pin): pin(pin) { }
-  void init() {
-    pinMode(pin, INPUT_PULLUP);
-  }
-  void read() {
-    state = digitalRead(pin);
-  }
-  const uint8_t pin;
-  uint8_t state = HIGH;
-};
+void Switch::read() {
+  state = digitalRead(pin);
+}
 
-Switch switches[3] = {
-  Switch(SWITCH_A_PIN),
-  Switch(SWITCH_B_PIN),
-  Switch(SWITCH_C_PIN)
-};
-const int switchCount = COUNT(switches);
+void EncoderKnob::init() {
+  pinMode(pin0, INPUT);
+  pinMode(pin1, INPUT);
+}
 
-struct EncoderKnob {
-  EncoderKnob(uint8_t p0, uint8_t p1): pin0(p0), pin1(p1) { }
-  void init() {
-    pinMode(pin0, INPUT);
-    pinMode(pin1, INPUT);
-  }
-  void read() {
-    int p0 = digitalRead(pin0);
-    if (pin0LastReading == LOW && p0 == HIGH) {
-      int p1 = digitalRead(pin1);
-      if (p1 == LOW) {
-        pos--;
-      } else {
-        pos++;
-      }
+void EncoderKnob::read() {
+  int p0 = digitalRead(pin0);
+  if (pin0LastReading == LOW && p0 == HIGH) {
+    int p1 = digitalRead(pin1);
+    if (p1 == LOW) {
+      pos--;
+    } else {
+      pos++;
     }
-    pin0LastReading = p0;
   }
-  const uint8_t pin0;
-  const uint8_t pin1;
-  uint8_t pin0LastReading = LOW;
-  uint8_t pos = 0;
-};
-
-EncoderKnob knobs[2] = {
-  EncoderKnob(KNOB_A_PIN_0, KNOB_A_PIN_1),
-  EncoderKnob(KNOB_B_PIN_0, KNOB_B_PIN_1)
-};
-const int knobCount = COUNT(knobs);
-
-void initSwitches() {
-  for (int i = 0; i < switchCount; i++) {
-    switches[i].init();
-  }
+  pin0LastReading = p0;
 }
 
-void readSwitches() {
-  for (int i = 0; i < switchCount; i++) {
-    switches[i].read();
-  }
+void Inputs::init() {
+  horn.init();
+  s1.init();
+  s2.init();
+  progSelect.init();
+  progMod.init();
 }
 
-void initKnobs() {
-  for (int i = 0; i < knobCount; i++) {
-    knobs[i].init();
-  }
+void Inputs::read() {
+  horn.read();
+  s1.read();
+  s2.read();
+  progSelect.read();
+  progMod.read();
 }
-
-void readKnobs() {
-  for (int i = 0; i < knobCount; i++) {
-    knobs[i].read();
-  }
-  Serial.println(knobs[0].pos);
-}
-
 
 
