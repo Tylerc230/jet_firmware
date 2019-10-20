@@ -13,3 +13,7 @@
 #define KNOB_B_PIN_0 12
 #define KNOB_B_PIN_1 13
 
+#define NOSE_LED_COUNT 50
+#define WING_LED_COUNT 50
+#define TAIL_LED_COUNT 50
+
