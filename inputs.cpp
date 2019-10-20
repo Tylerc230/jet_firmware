@@ -73,5 +73,8 @@ void readKnobs() {
   for (int i = 0; i < knobCount; i++) {
     knobs[i].read();
   }
+  Serial.println(knobs[0].pos);
 }
+
+
 
