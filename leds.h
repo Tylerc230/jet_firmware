@@ -1,7 +1,5 @@
 #include <FastLED.h>
 #include "constants.h"
-void initLEDs();
-void updateLEDs();
 struct LEDStrip {
   const uint8_t pinNo;
   const uint8_t numLEDs;

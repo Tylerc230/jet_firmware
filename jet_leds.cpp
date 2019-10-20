@@ -1,13 +1,13 @@
 #include <Arduino.h>
 #include "program.h"
-Program program = Program();
+ProgramRunner runner = ProgramRunner();
 void setup() {
   Serial.begin(9600);
   delay( 3000 ); // power-up safety delay
-  program.init();
+  runner.init();
 }
 
 void loop() {
-  program.update();
+  runner.update();
 }
 
