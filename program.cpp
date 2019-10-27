@@ -10,13 +10,11 @@ struct ColorProgram: Program {
   CRGBPalette16 palette;
   ColorProgram(CRGBPalette16 palette) : palette(palette) {}
   virtual void init(Inputs & inputs, AirplaneLEDs & airplane) {
-    Serial.println("CP init");
     airplane.clearLEDs();
   }
 
   virtual void update(Inputs & inputs, AirplaneLEDs & airplane) {
-    Serial.println("CP update");
-    ((uint32_t *)airplane.tail.leds)[0] = CRGB::Red;
+    airplane.tail.leds[0] = CRGB::Red;
   }
 };
 
@@ -26,14 +24,14 @@ void ProgramRunner::init() {
 }
 
 void ProgramRunner::update() {
-  Serial.println("PR update");
   inputs.read();
-  if (inputs.progSelect.pos != currentProgramIndex) {
+  int selection = 0;//inputs.progSelect.pos % 0;
+  if (selection != currentProgramIndex) {
     if (currentProgram != NULL) {
       delete currentProgram;
     }
-    currentProgram = createProgram(inputs.progSelect.pos);
-    currentProgramIndex = inputs.progSelect.pos;
+    currentProgram = createProgram(selection);
+    currentProgramIndex = selection;
     currentProgram->init(inputs, airplane);
   }
   currentProgram->update(inputs, airplane);

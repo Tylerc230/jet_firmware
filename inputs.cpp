@@ -26,6 +26,7 @@ void EncoderKnob::read() {
 }
 
 void Inputs::init() {
+  digitalWrite(13, LOW);
   horn.init();
   s1.init();
   s2.init();

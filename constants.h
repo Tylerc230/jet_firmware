@@ -14,12 +14,14 @@
 #define SWITCH_B_PIN 8
 #define SWITCH_C_PIN 9
 
-#define KNOB_A_PIN_0 10
-#define KNOB_A_PIN_1 11
-#define KNOB_B_PIN_0 12
-#define KNOB_B_PIN_1 13
+#define KNOB_A_PIN_0 11
+#define KNOB_A_PIN_1 12
+#define KNOB_B_PIN_0 A0
+#define KNOB_B_PIN_1 A1
 
 #define NOSE_LED_COUNT 27
 #define WING_LED_COUNT 29
 #define TAIL_LED_COUNT 30
+
+#define HORN_OUT 10
 
