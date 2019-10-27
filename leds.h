@@ -1,3 +1,4 @@
+#define FASTLED_RGBW
 #include <FastLED.h>
 #include "constants.h"
 struct LEDStrip {
@@ -15,6 +16,7 @@ struct LEDPair {
 
 struct AirplaneLEDs {
   void init();
+  void clearLEDs();
   LEDPair nose = LEDPair(NOSE_LED_COUNT, L_NOSE_LED_PIN, R_NOSE_LED_PIN);
   LEDPair wings = LEDPair(WING_LED_COUNT, L_WING_LED_PIN, R_WING_LED_PIN);
   LEDStrip tail = LEDStrip(TAIL_LED_PIN, 50);

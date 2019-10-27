@@ -1,3 +1,4 @@
+#define FASTLED_RGBW
 #include <FastLED.h>
 #include "leds.h"
 #include "inputs.h"
