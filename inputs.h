@@ -1,5 +1,6 @@
 #include <Arduino.h>
 #include "constants.h"
+#include "Encoder.h"
 
 struct Switch {
   Switch(uint8_t pin): pin(pin) { }
@@ -10,13 +11,12 @@ struct Switch {
 };
 
 struct EncoderKnob {
-  EncoderKnob(uint8_t p0, uint8_t p1): pin0(p0), pin1(p1) { }
-  const uint8_t pin0;
-  const uint8_t pin1;
-  uint8_t pin0LastReading = LOW;
-  uint8_t pos = 0;
+  EncoderKnob(uint8_t p0, uint8_t p1): enc(Encoder(p0, p1)) { }
   void init();
   void read();
+  int pos = 0;
+  private:
+  Encoder enc;
 };
 
 struct Inputs {

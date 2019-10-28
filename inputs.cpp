@@ -8,23 +8,11 @@ void Switch::read() {
 }
 
 void EncoderKnob::init() {
-  pinMode(pin0, INPUT);
-  pinMode(pin1, INPUT);
-  digitalWrite(pin0, LOW);
-  digitalWrite(pin1, LOW);
+  enc.write(pos);
 }
 
 void EncoderKnob::read() {
-  int p0 = digitalRead(pin0);
-  int p1 = digitalRead(pin1);
-  if (pin0LastReading != p0) {
-    if (p1 == p0) {
-      pos--;
-    } else {
-      pos++;
-    }
-  }
-  pin0LastReading = p0;
+  pos = enc.read();
 }
 
 void Inputs::init() {

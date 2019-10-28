@@ -19,8 +19,8 @@
 #define KNOB_A_PIN_1 12
 //mod select, blue headers
 //pin 13 doesn't work
-#define KNOB_B_PIN_0 14
-#define KNOB_B_PIN_1 15
+#define KNOB_B_PIN_0 15
+#define KNOB_B_PIN_1 14
 
 #define NOSE_LED_COUNT 27
 #define WING_LED_COUNT 29
