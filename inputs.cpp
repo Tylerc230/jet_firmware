@@ -10,13 +10,15 @@ void Switch::read() {
 void EncoderKnob::init() {
   pinMode(pin0, INPUT);
   pinMode(pin1, INPUT);
+  digitalWrite(pin0, LOW);
+  digitalWrite(pin1, LOW);
 }
 
 void EncoderKnob::read() {
   int p0 = digitalRead(pin0);
-  if (pin0LastReading == LOW && p0 == HIGH) {
-    int p1 = digitalRead(pin1);
-    if (p1 == LOW) {
+  int p1 = digitalRead(pin1);
+  if (pin0LastReading != p0) {
+    if (p1 == p0) {
       pos--;
     } else {
       pos++;
@@ -26,7 +28,6 @@ void EncoderKnob::read() {
 }
 
 void Inputs::init() {
-  digitalWrite(13, LOW);
   horn.init();
   s1.init();
   s2.init();

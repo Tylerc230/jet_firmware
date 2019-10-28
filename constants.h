@@ -14,10 +14,13 @@
 #define SWITCH_B_PIN 8
 #define SWITCH_C_PIN 9
 
+//prog select, red headers
 #define KNOB_A_PIN_0 11
 #define KNOB_A_PIN_1 12
-#define KNOB_B_PIN_0 A0
-#define KNOB_B_PIN_1 A1
+//mod select, blue headers
+//pin 13 doesn't work
+#define KNOB_B_PIN_0 14
+#define KNOB_B_PIN_1 15
 
 #define NOSE_LED_COUNT 27
 #define WING_LED_COUNT 29
