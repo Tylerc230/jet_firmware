@@ -12,7 +12,11 @@ void EncoderKnob::init() {
 }
 
 void EncoderKnob::read() {
-  pos = enc.read();
+  int total = enc.read() / 4;
+  if (total < 0) {
+    total = max - 1;
+  }
+  pos = (total) % max;
 }
 
 void Inputs::init() {

@@ -28,7 +28,7 @@ void ProgramRunner::update() {
 Program * ProgramRunner::createProgram(uint8_t progIndex) {
   switch (progIndex) {
     case 0:
-      return new ColorProgram(RainbowColors_p);
+      return new ColorProgram();
 
   };
 }

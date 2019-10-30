@@ -17,7 +17,8 @@ struct EncoderKnob {
   EncoderKnob(uint8_t p0, uint8_t p1): enc(Encoder(p0, p1)) { }
   void init();
   void read();
-  int pos = 0;
+  unsigned int max = 5;
+  unsigned int pos = 0;
   private:
   Encoder enc;
 };
