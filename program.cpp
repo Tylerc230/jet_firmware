@@ -9,12 +9,17 @@ struct Program {
 struct ColorProgram: Program {
   CRGBPalette16 palette;
   ColorProgram(CRGBPalette16 palette) : palette(palette) {}
+  int index = 0;
   virtual void init(Inputs & inputs, AirplaneLEDs & airplane) {
     airplane.clearLEDs();
   }
 
   virtual void update(Inputs & inputs, AirplaneLEDs & airplane) {
-    airplane.tail.leds[0] = CRGB::Red;
+    int i =  index++ % MAX_LEDS;
+    airplane.setAll(i, CRGB::Pink);
+    if (i == 0) {
+      airplane.clearLEDs();
+    }
   }
 };
 
