@@ -1,4 +1,5 @@
-#define FASTLED_RGBW
+#ifndef INCLUDE_PROGRAM_RUNNER
+#define INCLUDE_PROGRAM_RUNNER
 #include <FastLED.h>
 #include "leds.h"
 #include "inputs.h"
@@ -14,3 +15,4 @@ struct ProgramRunner {
   Program * currentProgram = NULL;
 };
 
+#endif

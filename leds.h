@@ -1,4 +1,5 @@
-#define FASTLED_RGBW
+#ifndef INCLUDE_JET_LEDS
+#define INCLUDE_JET_LEDS
 #include <FastLED.h>
 #include "constants.h"
 struct LEDStrip {
@@ -28,3 +29,4 @@ struct AirplaneLEDs {
   LEDStrip tail = LEDStrip(TAIL_LED_PIN, TAIL_LED_COUNT);
 };
 
+#endif

@@ -5,8 +5,8 @@ set( CMAKE_CXX_FLAGS "-DFASTLED_RGBW" )
 # Call a framework utility function, passing it information about the hardware board that will be used - This function returns a structure known only to the framework
 get_board_id(board_id pro 16MHzatmega328)
 file(GLOB jet_LEDs_src
-    "*.h"
-    "*.cpp"
+    "**/*.h"
+    "**/*.cpp"
 )
 # Create an executable suitable for Arduino using CMake-style target-creation
 add_arduino_executable(Jet_LEDs ${board_id} ${jet_LEDs_src})

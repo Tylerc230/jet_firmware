@@ -1,3 +1,6 @@
+#ifndef INCLUDE_JET_INPUTS
+#define INCLUDE_JET INPUTS
+
 #include <Arduino.h>
 #include "constants.h"
 #include "Encoder.h"
@@ -28,4 +31,6 @@ struct Inputs {
   void init();
   void read();
 };
+
+#endif 
 
