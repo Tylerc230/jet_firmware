@@ -6,7 +6,7 @@ void LEDStrip::setLED(int index, CRGB color) {
     return;
   }
   int finalIndex = reversed ? (numLEDs - index - 1) : index;
-  leds[index] = color;
+  leds[finalIndex] = color;
 }
 
 

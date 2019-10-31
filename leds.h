@@ -28,8 +28,8 @@ struct AirplaneLEDs {
   void playTone(int freq, int duration);
   void toneOff();
   LEDPair nose = LEDPair(NOSE_LED_COUNT, L_NOSE_LED_PIN, R_NOSE_LED_PIN, true);
-  LEDPair wings = LEDPair(WING_LED_COUNT, L_WING_LED_PIN, R_WING_LED_PIN, false);
-  LEDStrip tail = LEDStrip(TAIL_LED_PIN, TAIL_LED_COUNT, false);
+  LEDPair wings = LEDPair(WING_LED_COUNT, L_WING_LED_PIN, R_WING_LED_PIN, true);
+  LEDStrip tail = LEDStrip(TAIL_LED_PIN, TAIL_LED_COUNT, true);
 };
 
 #endif
