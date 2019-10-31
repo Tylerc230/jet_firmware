@@ -9,8 +9,11 @@ struct Switch {
   Switch(uint8_t pin): pin(pin) { }
   void init();
   void read();
+  bool didChange();
+  bool isPressed();
   const uint8_t pin;
   uint8_t state = HIGH;
+  uint8_t lastState = LOW;
 };
 
 struct EncoderKnob {

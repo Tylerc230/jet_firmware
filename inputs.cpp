@@ -4,7 +4,16 @@ void Switch::init() {
 }
 
 void Switch::read() {
+  lastState = state;
   state = digitalRead(pin);
+}
+
+bool Switch::didChange() {
+  return state != lastState;
+}
+
+bool Switch::isPressed() {
+  return state == LOW;
 }
 
 void EncoderKnob::init() {

@@ -3,6 +3,7 @@
 #define COLOR_ORDER GRB
 #define UPDATES_PER_SECOND 100
 
+#define TOTAL_LEDS 143
 #define MAX_LEDS 30
 #define L_NOSE_LED_PIN 2
 #define R_NOSE_LED_PIN 3
