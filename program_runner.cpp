@@ -2,16 +2,18 @@
 #include "colorutils.h"
 #include "constants.h"
 #include "programs/ColorProgram.h"
+#define NUM_PROG 1
 
 
 void ProgramRunner::init() {
   inputs.init();
   airplane.init();
+  inputs.progSelect.max = NUM_PROG;
 }
 
 void ProgramRunner::update() {
   inputs.read();
-  int selection = 0;//inputs.progSelect.pos % 0;
+  int selection = inputs.progSelect.pos;
   if (selection != currentProgramIndex) {
     if (currentProgram != NULL) {
       delete currentProgram;
