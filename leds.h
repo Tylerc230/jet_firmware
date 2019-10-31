@@ -24,6 +24,8 @@ struct AirplaneLEDs {
   void fill(CRGB color);
   void clearLEDs();
   void setAll(int index, CRGB color);
+  void playTone(int freq, int duration);
+  void toneOff();
   LEDPair nose = LEDPair(NOSE_LED_COUNT, L_NOSE_LED_PIN, R_NOSE_LED_PIN);
   LEDPair wings = LEDPair(WING_LED_COUNT, L_WING_LED_PIN, R_WING_LED_PIN);
   LEDStrip tail = LEDStrip(TAIL_LED_PIN, TAIL_LED_COUNT);

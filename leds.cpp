@@ -1,5 +1,6 @@
 #include "leds.h"
 #include "colorutils.h"
+#include "Arduino.h"
 void LEDStrip::setLED(int index, CRGB color) {
   if (index >= numLEDs) {
     return;
@@ -21,6 +22,7 @@ void LEDPair::fill(CRGB color) {
   left.fill(color);
   right.fill(color);
 }
+
 
 void AirplaneLEDs::init() {
   FastLED.addLeds<LED_TYPE, L_NOSE_LED_PIN, COLOR_ORDER>(nose.left.leds, nose.left.numLEDs).setCorrection(TypicalLEDStrip);
@@ -46,4 +48,12 @@ void AirplaneLEDs::fill(CRGB color) {
 
 void AirplaneLEDs::clearLEDs() {
   fill(CRGB::Black);
+}
+
+void AirplaneLEDs::playTone(int freq, int duration) {
+  tone(HORN_OUT, freq, duration);
+}
+
+void AirplaneLEDs::toneOff() {
+  noTone(HORN_OUT);
 }
