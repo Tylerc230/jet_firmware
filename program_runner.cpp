@@ -2,7 +2,8 @@
 #include "colorutils.h"
 #include "constants.h"
 #include "programs/ColorProgram.h"
-#define NUM_PROG 1
+#include "programs/RainProgram.h"
+#define NUM_PROG 2
 
 
 void ProgramRunner::init() {
@@ -30,6 +31,8 @@ void ProgramRunner::update() {
 Program * ProgramRunner::createProgram(uint8_t progIndex) {
   switch (progIndex) {
     case 0:
+      return new RainProgram();
+    case 1:
       return new ColorProgram();
 
   };

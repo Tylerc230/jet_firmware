@@ -58,3 +58,19 @@ void AirplaneLEDs::playTone(int freq, int duration) {
 void AirplaneLEDs::toneOff() {
   noTone(HORN_OUT);
 }
+
+LEDStrip & AirplaneLEDs::stripForId(LEDStripID id) {
+  switch (id) {
+    case TAIL:
+      return tail;
+    case L_NOSE:
+      return nose.left;
+    case R_NOSE:
+      return nose.right;
+    case L_WING:
+      return wings.left;
+    case R_WING:
+      return wings.right;
+  }
+
+}

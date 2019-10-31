@@ -21,12 +21,25 @@ void EncoderKnob::init() {
 }
 
 void EncoderKnob::read() {
+  lastPos = pos;
   int total = enc.read() / 4;
-  if (total < 0) {
-    total = max - 1;
+  if (wrap) {
+    if (total < 0) {
+      total = max - 1;
+    }
+    pos = (total) % max;
+  } else {//clamp
+    if (total < 0) {
+      total = 0;
+    }
+    pos = min(total, max);
   }
-  pos = (total) % max;
 }
+
+bool EncoderKnob::didChange() {
+  return lastPos != pos;
+}
+
 
 void Inputs::init() {
   horn.init();

@@ -203,5 +203,10 @@
   "directory": "/Users/tyler/Documents/Arduino/jet_leds",
   "command": "/Applications/Arduino.app/Contents/Java/hardware/tools/avr/bin/avr-g++  -DARDUINO_ARCH_AVR -I/Applications/Arduino.app/Contents/Java/hardware/arduino/avr/cores/arduino -I/Applications/Arduino.app/Contents/Java/hardware/arduino/avr/variants/eightanaloginputs -I/Users/tyler/Documents/Arduino/libraries/FastLED -I/Applications/Arduino.app/Contents/Java/hardware/arduino/avr/libraries/SoftwareSerial/src -I/Users/tyler/Documents/Arduino/libraries/Encoder -I/Users/tyler/Documents/Arduino/libraries/Encoder/utility  -DFASTLED_RGBW   -c -g -Os -w -std=gnu++11 -fpermissive -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -Wno-error=narrowing -MMD -flto -mmcu=atmega328p -DF_CPU=16000000L -DARDUINO=108010 \"-DARDUINO_AVR_PRO \" -o CMakeFiles/Jet_LEDs.dir/programs/ColorProgram.cpp.obj -c /Users/tyler/Documents/Arduino/jet_leds/programs/ColorProgram.cpp",
   "file": "/Users/tyler/Documents/Arduino/jet_leds/programs/ColorProgram.cpp"
+},
+{
+  "directory": "/Users/tyler/Documents/Arduino/jet_leds",
+  "command": "/Applications/Arduino.app/Contents/Java/hardware/tools/avr/bin/avr-g++  -DARDUINO_ARCH_AVR -I/Applications/Arduino.app/Contents/Java/hardware/arduino/avr/cores/arduino -I/Applications/Arduino.app/Contents/Java/hardware/arduino/avr/variants/eightanaloginputs -I/Users/tyler/Documents/Arduino/libraries/FastLED -I/Applications/Arduino.app/Contents/Java/hardware/arduino/avr/libraries/SoftwareSerial/src -I/Users/tyler/Documents/Arduino/libraries/Encoder -I/Users/tyler/Documents/Arduino/libraries/Encoder/utility  -DFASTLED_RGBW   -c -g -Os -w -std=gnu++11 -fpermissive -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -Wno-error=narrowing -MMD -flto -mmcu=atmega328p -DF_CPU=16000000L -DARDUINO=108010 \"-DARDUINO_AVR_PRO \" -o CMakeFiles/Jet_LEDs.dir/programs/RainProgram.cpp.obj -c /Users/tyler/Documents/Arduino/jet_leds/programs/RainProgram.cpp",
+  "file": "/Users/tyler/Documents/Arduino/jet_leds/programs/RainProgram.cpp"
 }
 ]

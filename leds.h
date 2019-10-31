@@ -20,6 +20,10 @@ struct LEDPair {
   LEDPair(uint8_t numLEDs, uint8_t leftPin, uint8_t rightPin, bool reversed): left(LEDStrip(leftPin, numLEDs, reversed)), right(LEDStrip(rightPin, numLEDs, reversed)) {}
 };
 
+enum LEDStripID {
+  TAIL, L_NOSE, R_NOSE, L_WING, R_WING, NUM_STRIPS = 5
+};
+
 struct AirplaneLEDs {
   void init();
   void fill(CRGB color);
@@ -27,9 +31,10 @@ struct AirplaneLEDs {
   void setAll(int index, CRGB color);
   void playTone(int freq, int duration);
   void toneOff();
-  LEDPair nose = LEDPair(NOSE_LED_COUNT, L_NOSE_LED_PIN, R_NOSE_LED_PIN, true);
-  LEDPair wings = LEDPair(WING_LED_COUNT, L_WING_LED_PIN, R_WING_LED_PIN, true);
-  LEDStrip tail = LEDStrip(TAIL_LED_PIN, TAIL_LED_COUNT, true);
+  LEDStrip & stripForId(LEDStripID id);
+  LEDPair nose = LEDPair(NOSE_LED_COUNT, L_NOSE_LED_PIN, R_NOSE_LED_PIN, false);
+  LEDPair wings = LEDPair(WING_LED_COUNT, L_WING_LED_PIN, R_WING_LED_PIN, false);
+  LEDStrip tail = LEDStrip(TAIL_LED_PIN, TAIL_LED_COUNT, false);
 };
 
 #endif

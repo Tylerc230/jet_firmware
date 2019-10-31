@@ -20,8 +20,11 @@ struct EncoderKnob {
   EncoderKnob(uint8_t p0, uint8_t p1): enc(Encoder(p0, p1)) { }
   void init();
   void read();
+  bool didChange();
+  bool wrap = true;//or clamp
   unsigned int max = 5;
   unsigned int pos = 0;
+  unsigned int lastPos = 255;
   private:
   Encoder enc;
 };
